@@ -3,8 +3,15 @@
   "siteName": "kkday 할인쿠폰 코드",
   "baseUrl": "https://kkd.trip-offer.co.kr",
   "postUrlPattern": "/blog/{slug}/",
-  "updated": "2026-09-27",
+  "updated": "2026-09-29",
   "posts": [
+    {
+      "title": "kkday 할인코드로 공항교통·교통패스 할인 받는 법",
+      "slug": "kkday-discount-code-airport-transfer-transit-pass",
+      "date": "2026-09-29",
+      "description": "kkday 할인코드로 공항 리무진과 셔틀, 고속철도 교통패스 예약 시 쓸 수 있는 코드와 할인율, 적용 방법, 주의할 점을 한 번에 정리했습니다.",
+      "image": ""
+    },
     {
       "title": "kkday 할인코드 사용 시 대소문자 구분 안내",
       "slug": "kkday-discount-code-case-sensitive",
