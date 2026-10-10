@@ -140,6 +140,13 @@
 .km-btn{display:inline-block;background:#E4583E;color:#fff;text-decoration:none;font-weight:700;font-size:16px;padding:13px 24px;border:2px solid #1F2124;border-radius:999px;box-shadow:3px 3px 0 #1F2124}
 .km-btn:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 #1F2124}
 .km-cta p{margin:0;font-size:14px;color:#55585E;word-break:keep-all}
+.km-pages{max-width:1120px;margin:-12px auto 24px}
+.km-pages ul{list-style:none;margin:0;padding:2px 0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.km-pages ul::-webkit-scrollbar{display:none}
+.km-pages a{display:block;color:#1F2124;background:#FBF8F1;text-decoration:none;font-size:14.5px;font-weight:700;padding:7px 16px;border:2px solid #1F2124;border-radius:999px;white-space:nowrap}
+.km-pages a:hover{background:#E3E7D6}
+.km-pages a[aria-current="page"]{background:#1F2124;color:#F4EFE4}
+.km-pages li{flex:0 0 auto}
 .km-nav{position:sticky;top:0;z-index:20;background:#1F2124;border-bottom:2px solid #1F2124}
 .km-navin{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:6px;padding:8px 20px;overflow-x:auto;scrollbar-width:none}
 .km-navin::-webkit-scrollbar{display:none}
@@ -155,6 +162,8 @@
 .km-foot p{margin:0 0 8px}
 .km-ftitle{font-size:13.5px;font-weight:800;color:#F4EFE4;letter-spacing:.02em;margin:0 0 10px;padding-bottom:8px;border-bottom:1.5px dashed #55585E}
 .km-foot ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.km-flinks{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px;border-top:1.5px solid #3A3D42;padding-top:24px}
+.km-flinks ul{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px 20px}
 .km-fbottom{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;border-top:1.5px solid #3A3D42;padding-top:16px;font-size:13px}
 @media (max-width:980px){
 .km-headin{grid-template-columns:1fr}
@@ -166,7 +175,9 @@
 .km-nums{grid-template-columns:1fr}
 .km-navin{padding:8px 12px}
 .km-footin{grid-template-columns:1fr}
+.km-flinks{grid-template-columns:1fr}
 .km-foot{padding:36px 16px 30px}
+.km-pages{margin:-6px 0 20px}
 }
 .kw{--kw-paper:#F4EFE4;--kw-card:#FBF8F1;--kw-ink:#1F2124;--kw-sub:#55585E;--kw-line:#CFC6B4;--kw-sage:#7E8C5E;--kw-sage-t:#E3E7D6;--kw-slate:#56687A;--kw-slate-t:#DCE2E8;--kw-coral:#E4583E;--kw-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;--kw-sans:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR",sans-serif;background:var(--kw-paper);color:var(--kw-ink);font-family:var(--kw-sans);line-height:1.7;padding:56px 20px 64px;scroll-margin-top:72px;word-break:keep-all;overflow-wrap:break-word}
 .kw :where(h2,h3,p,ul,ol,li,figure,table,caption,th,td){margin:0;padding:0}
@@ -229,6 +240,7 @@
 .kw-rank{display:inline-block;font-size:11.5px;font-weight:800;color:#fff;background:var(--kw-coral);border-radius:3px;padding:0 6px;margin-right:6px;vertical-align:1px}
 .kw-tail{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:14px;color:var(--kw-sub)}
 .kw-tail a{color:var(--kw-ink);text-underline-offset:3px}
+.kw-more{margin-top:26px}
 @media (max-width:980px){
 .kw-head{grid-template-columns:1fr}
 .kw-grid{grid-template-columns:1fr}
@@ -530,6 +542,12 @@
 <body class="km-body">
 <a class="km-skip" href="#main">본문 바로가기</a>
 <header class="km-head" id="top">
+<nav class="km-pages" aria-label="페이지 메뉴">
+<ul>
+<li><a href="./" aria-current="page">홈</a></li>
+<li><a href="coupon/">kkday 쿠폰</a></li>
+</ul>
+</nav>
 <div class="km-headin">
 <div>
 <p class="km-brand">KKday · CODES · COUPONS · CARDS</p>
@@ -743,6 +761,8 @@
 <p>쿠폰을 받는 곳과 결제 화면에서 고르는 순서는 <a href="#howto">kkday 할인코드 사용 방법</a>에 있습니다.</p>
 <p>계산에 쓴 상품 요금과 인원은 설명을 위한 예시 금액입니다.</p>
 </div>
+
+<p class="kw-more"><a class="kw-btn" href="coupon/">kkday 쿠폰 전체 보기</a></p>
 
 </div>
 </section>
@@ -1363,6 +1383,34 @@
 <li><a href="https://fft.agd-offer.co.kr/" target="_blank" rel="noopener">파페치 쿠폰</a></li>
 </ul>
 </div>
+<!--@FOOTER-LINKS-->
+<div class="km-flinks">
+<div>
+<p class="km-ftitle">카드사별 할인</p>
+<ul>
+<li><a href="hyundai-card/">현대카드</a></li>
+<li><a href="shinhan-card/">신한카드</a></li>
+<li><a href="woori-card/">우리카드</a></li>
+<li><a href="nh-card/">NH농협카드</a></li>
+<li><a href="payco-pay/">페이코</a></li>
+<li><a href="master-card/">마스터카드</a></li>
+<li><a href="visa-card/">비자카드</a></li>
+</ul>
+</div>
+<div>
+<p class="km-ftitle">다른 할인코드</p>
+<ul>
+<li><a href="tripcom/">트립닷컴 할인코드</a></li>
+<li><a href="klook/">클룩 할인코드</a></li>
+<li><a href="agoda/">아고다 할인코드</a></li>
+<li><a href="myrealtrip/">마이리얼트립 할인코드</a></li>
+<li><a href="hotelscom/">호텔스닷컴 할인코드</a></li>
+<li><a href="rakutentravel/">라쿠텐트래블 할인코드</a></li>
+<li><a href="usimsa/">유심사 할인쿠폰</a></li>
+</ul>
+</div>
+</div>
+<!--@/FOOTER-LINKS-->
 <div class="km-fbottom">
 <span>© kkday 할인코드</span>
 <a href="#top">처음으로</a>
